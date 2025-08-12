@@ -1,5 +1,5 @@
 {
-  "name": "Thousand Sons",
+  "name": "Prism of Zadophon",
   "revision": "10.12.8",
   "game": "Warhammer 40k",
   "genre": "sci-fi",
@@ -171,7 +171,7 @@
           }
         }
       },
-      "Detachment§The Gilded Cabal": {
+      "Detachment§Prism of Zadophon": {
         "rules": {
           "assignStratagems": {
             "actions": [
@@ -223,7 +223,7 @@
             "failState": "pass"
           }
         },
-        "text": "**The Gilded Cabal**\n\nEach time a Thousand Sons Psyker model is selected to shoot or fight, roll a D6. On a 4+, add 1 to the Strength characteristic of that model's Psychic weapons until the end of the phase. On a 6, add 1 to the Damage characteristic as well."
+        "text": "**Prism of Zadophon**\n\nEach time a Thousand Sons Psyker model is selected to shoot or fight, roll a D6. On a 4+, add 1 to the Strength characteristic of that model's Psychic weapons until the end of the phase. On a 6, add 1 to the Damage characteristic as well."
       },
       "Melee Weapon§Force stave": {
         "aspects": {
@@ -671,7 +671,7 @@
         "stats": {
           "Combat Patrol": {
             "ranks": {
-              "The Gilded Cabal": {
+              "Prism of Zadophon": {
                 "order": 1,
                 "traits": [
                   {
@@ -689,7 +689,7 @@
                 ]
               }
             },
-            "value": "The Gilded Cabal"
+            "value": "Prism of Zadophon"
           }
         }
       },
@@ -704,7 +704,7 @@
           ],
           "Keywords": [
             "Thousand Sons",
-            "The Gilded Cabal"
+            "Prism of Zadophon"
           ],
           "Turn": [
             "Yours",
@@ -723,7 +723,7 @@
           ],
           "Keywords": [
             "Thousand Sons",
-            "The Gilded Cabal"
+            "Prism of Zadophon"
           ],
           "Turn": [
             "Yours",
@@ -742,7 +742,7 @@
           ],
           "Keywords": [
             "Thousand Sons",
-            "The Gilded Cabal"
+            "Prism of Zadophon"
           ],
           "Turn": [
             "Yours"
