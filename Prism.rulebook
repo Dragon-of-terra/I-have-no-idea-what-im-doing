@@ -1,11 +1,11 @@
 {
-  "name": "Prism of Zadopon",
-  "revision": "7.0.9",
+  "name": "Thousand Sons",
+  "revision": "10.12.8",
   "game": "Warhammer 40k",
   "genre": "sci-fi",
   "publisher": "Games Workshop",
   "url": "https://warhammer40000.com",
-  "notes": "Custom Combat Patrol",
+  "notes": "",
   "wip": false,
   "dependencies": [
     {
@@ -16,354 +16,868 @@
     }
   ],
   "rulebook": {
-    "assetTaxonomy": {
-      "Character": {
-        "removed": {
-          "allowed": {
-            "classifications": [
-              "Enhancement"
-            ]
-          }
+    "assetTaxonomy": {},
+    "assetCatalog": {
+      "Ability§Bestial Prophet": {
+        "keywords": {
+          "Keywords": [
+            "Other"
+          ]
         },
-        "rules": {
-          "renameToWarlord": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "aspects",
-                    "Label"
-                  ]
-                ],
-                "prepend": "WL ",
-                "value": [
-                  "{this}",
-                  "evals",
-                  "0",
-                  "result",
-                  "string"
-                ]
+        "text": "While this model is leading a unit, each time a model in that unit makes an attack, add 1 to the hit roll."
+      },
+      "Ability§Cabal of Sorcerers": {
+        "keywords": {
+          "Keywords": [
+            "Faction"
+          ]
+        },
+        "text": "At the end of your Command phase, if this unit's Aspiring Sorcerer or Scarab Occult Sorcerer model is on the battlefield and not Battle-shocked, it generates 1 Cabal point."
+      },
+      "Ability§Prophesied Doom": {
+        "keywords": {
+          "Keywords": [
+            "Other"
+          ]
+        },
+        "text": "At the end of each time this unit ends a Charge move, select one enemy unit within Engagement Range of it, then roll one D6 for each model in this unit that is within Engagement Range of that enemy unit. For each 4+, that enemy unit suffers 1 mortal wound."
+      },
+      "Ability§Spirit Snare": {
+        "keywords": {
+          "Keywords": [
+            "Other"
+          ]
+        },
+        "text": "When a friendly THOUSAND SONS PSYKER model with the Cabal of Sorcerers ability is destroyed within 9\" of this model, you can select one of the models with this ability. Until the end of the battle, each time the selected model attempts a Ritual, you add 1 to the Psychic test result (to a maximum of +2)."
+      },
+      "Character§The Gilded Cabal—Kaa'skrek": {
+        "aspects": {
+          "Label": "Kaa'skrek"
+        },
+        "assets": {
+          "traits": [
+            "Ability§Leader",
+            "Ability§Bestial Prophet",
+            "Ability§Cabal of Sorcerers",
+            {
+              "item": "Ability§Invulnerable",
+              "stats": {
+                "x": {
+                  "value": "5+"
+                }
               }
-            ],
-            "evals": [
-              {
-                "actionable": false,
-                "not": false,
-                "operator": "AND",
-                "paths": [
-                  [
-                    "{self}",
-                    "aspects",
-                    "Label"
-                  ]
-                ]
-              },
-              {
-                "actionable": true,
-                "not": false,
-                "operator": "AND",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Warlord",
-                    "value"
-                  ]
-                ],
-                "value": "✓"
-              }
-            ]
+            },
+            "Ranged Weapon§Kaa'skrek—Baleful Devolution",
+            "Melee Weapon§Kaa'skrek—Force stave"
+          ]
+        },
+        "keywords": {
+          "Faction": [
+            "Thousand Sons"
+          ],
+          "Source": [
+            "10th Edition Combat Patrol"
+          ],
+          "Keywords": [
+            "Infantry",
+            "Mounted",
+            "Character",
+            "Fly",
+            "Psyker",
+            "Chaos",
+            "Tzeentch",
+            "Mutant",
+            "Tzaangor Shaman",
+            "Kaa'skrek"
+          ]
+        },
+        "stats": {
+          "Ld": {
+            "value": 7
+          },
+          "M": {
+            "value": 10
+          },
+          "OC": {
+            "value": 2
+          },
+          "Sv": {
+            "value": 4
+          },
+          "T": {
+            "value": 4
+          },
+          "W": {
+            "value": 5
           }
         }
       },
-      "Unit": {
-        "removed": {
-          "stats": {
-            "Points": {},
-            "Leader": {}
-          }
+      "Character§The Gilded Cabal—Zadaphon the Soul Eater": {
+        "aspects": {
+          "Label": "Zadaphon the Soul Eater"
         },
+        "assets": {
+          "traits": [
+            "Ability§Cabal of Sorcerers",
+            "Ability§Spirit Snare",
+            {
+              "item": "Ability§Invulnerable",
+              "stats": {
+                "x": {
+                  "value": "4+"
+                }
+              }
+            },
+            "Ranged Weapon§Zadaphon the Soul Eater—Infernal cannon",
+            "Melee Weapon§Zadaphon the Soul Eater—Hellforged weapons"
+          ]
+        },
+        "keywords": {
+          "Faction": [
+            "Thousand Sons"
+          ],
+          "Source": [
+            "10th Edition Combat Patrol"
+          ],
+          "Keywords": [
+            "Monster",
+            "Character",
+            "Daemon",
+            "Psyker",
+            "Chaos",
+            "Tzeentch",
+            "Daemon Prince",
+            "Zadaphon the Soul Eater"
+          ]
+        },
+        "stats": {
+          "Ld": {
+            "value": 6
+          },
+          "M": {
+            "value": 9
+          },
+          "OC": {
+            "value": 3
+          },
+          "Sv": {
+            "value": 2
+          },
+          "T": {
+            "value": 10
+          },
+          "W": {
+            "value": 10
+          }
+        }
+      },
+      "Detachment§The Gilded Cabal": {
         "rules": {
-          "applyLeader": {
+          "assignStratagems": {
             "actions": [
               {
-                "actionType": "remove",
+                "actionType": "add",
                 "iterations": 1,
                 "paths": [
                   [
                     "{roster}",
+                    "traits",
+                    "item",
+                    "Stratagems§Stratagems",
                     "traits"
                   ]
                 ],
-                "value": [
-                  "{self}",
-                  "stats",
-                  "Led by",
-                  "processed",
-                  "term",
-                  "current"
-                ]
+                "value": "Stratagem§Arcane Vortex"
               },
               {
                 "actionType": "add",
                 "iterations": 1,
                 "paths": [
                   [
-                    "{self}",
+                    "{roster}",
+                    "traits",
+                    "item",
+                    "Stratagems§Stratagems",
                     "traits"
                   ]
                 ],
-                "value": [
-                  "{self}",
-                  "stats",
-                  "Led by",
-                  "processed",
-                  "term",
-                  "current"
-                ]
-              }
-            ],
-            "evals": [
+                "value": "Stratagem§Temporal Manipulation"
+              },
               {
-                "actionable": true,
-                "not": true,
-                "operator": "AND",
+                "actionType": "add",
+                "iterations": 1,
                 "paths": [
                   [
-                    "{self}",
-                    "stats",
-                    "Led by",
-                    "value"
+                    "{roster}",
+                    "traits",
+                    "item",
+                    "Stratagems§Stratagems",
+                    "traits"
                   ]
                 ],
-                "value": "-"
+                "value": "Stratagem§Destiny Foretold"
               }
             ],
+            "evals": [],
             "evaluate": "AND",
             "failState": "pass"
           }
         },
-        "stats": {
-          "Led by": {
-            "dynamic": true,
-            "group": "Loadout",
-            "groupOrder": 7,
-            "ranks": {
-              "-": {
-                "order": 0
-              }
-            },
-            "statOrder": 1,
-            "statType": "rank",
-            "tracked": true,
-            "value": null,
-            "visibility": "active"
-          }
-        }
-      }
-    },
-    "assetCatalog": {
-      "Roster§Roster": {
+        "text": "**The Gilded Cabal**\n\nEach time a Thousand Sons Psyker model is selected to shoot or fight, roll a D6. On a 4+, add 1 to the Strength characteristic of that model's Psychic weapons until the end of the phase. On a 6, add 1 to the Damage characteristic as well."
+      },
+      "Melee Weapon§Force stave": {
+        "aspects": {
+          "Label": "Force stave"
+        },
         "assets": {
           "traits": [
-            "Detachment§Prism of Zadopon",
-            "Character§Zadaphon the Soul Eater",
-            "Character§Kaa'skrek",
-            "Unit§Rubric Marines",
-            "Unit§Tzaangor Enlightened"
+            "Ability§Psychic"
           ]
         },
         "stats": {
-          "Detachment": {
-            "dynamic": false,
-            "value": "Prism of Zadopon"
+          "A": {
+            "value": 3
           },
-          "Faction": {
-            "dynamic": false,
-            "value": "Thousand Sons"
+          "AP": {
+            "value": -1
+          },
+          "D": {
+            "statType": "term",
+            "value": "D3"
+          },
+          "Range": {
+            "statType": "term",
+            "value": "Melee"
+          },
+          "S": {
+            "value": 5
+          },
+          "WS": {
+            "value": 5
           }
         }
       },
-      "Detachment§Prism of Zadopon": {
-        "text": "This is a fixed force designed to be played against other Combat Patrols."
-      },
-      "Ability§Cabal of Sorcerers": {},
-      "Ability§Spirit Snare": {
-        "text": "Each time a friendly THOUSAND SONS PSYKER model with the Cabal of Sorcerers ability is destroyed while within 9\" of one or more models with this ability, select one of those models with this ability: until the end of the battle, each time the selected model attempts a Ritual, add 1 to the Psychic test result (to a maximum of +2)."
-      },
-      "Ability§Prophesied Doom": {
-        "text": "Each time this unit ends a Charge move, select one enemy unit within Engagement Range of it, then roll one D6 for each model in this unit that is within Engagement Range of that enemy unit: for each 4+, that enemy unit suffers 1 mortal wound."
-      },
-      "Ability§Bestial Prophecy": {
-        "text": "While this model is leading a unit, each time a model in that unit makes an attack, add 1 to the Hit roll."
-      },
-      "Character§Zadaphon the Soul Eater": {
-        "aspects": { "Unique": true, "Label": "Zadaphon the Soul Eater" },
-        "assets": {
-          "traits": [
-            { "trait": "Ability§Deep Strike" },
-            { "trait": "Ability§Cabal of Sorcerers" },
-            { "trait": "Ability§Spirit Snare" },
-            { "trait": "Ability§Invulnerable", "stats": { "x": { "value": "4+" } } },
-            { "trait": "Ranged Weapon§Infernal cannon" },
-            { "trait": "Melee Weapon§Hellforged weapons" }
-          ]
-        },
-        "keywords": {
-          "Faction": [ "Thousand Sons" ],
-          "Keywords": [ "MONSTER", "CHARACTER", "EPIC HERO", "DAEMON", "PSYKER", "CHAOS", "TZEENTCH", "DAEMON PRINCE", "ZADOPHON THE SOUL EATER" ]
+      "Melee Weapon§Rubric Marines—Close combat weapon": {
+        "aspects": {
+          "Label": "Close combat weapon"
         },
         "stats": {
-          "M": { "value": 9 }, "T": { "value": 10 }, "Sv": { "value": 2 }, "W": { "value": 10 }, "Ld": { "value": 6 }, "OC": { "value": 3 },
-          "Warlord": { "dynamic": false, "value": "✓" }
+          "A": {
+            "value": 2
+          },
+          "AP": {
+            "value": 0
+          },
+          "D": {
+            "value": 1
+          },
+          "Range": {
+            "statType": "term",
+            "value": "Melee"
+          },
+          "S": {
+            "value": 4
+          },
+          "WS": {
+            "value": 3
+          }
         }
       },
-      "Character§Kaa'skrek": {
-        "aspects": { "Unique": true, "Label": "Kaa'skrek" },
+      "Melee Weapon§Rubric Marines—Force weapon": {
+        "aspects": {
+          "Label": "Force weapon"
+        },
         "assets": {
           "traits": [
-            { "trait": "Ability§Deep Strike" },
-            { "trait": "Ability§Bestial Prophecy" },
-            { "trait": "Ability§Leader", "text": "This model can be attached to the following unit:\n\n* Tzaangor Enlightened" },
-            { "trait": "Ability§Invulnerable", "stats": { "x": { "value": "5+" } } },
-            { "trait": "Ranged Weapon§Baleful Devolution" },
-            { "trait": "Melee Weapon§Force stave" }
+            "Ability§Psychic"
           ]
         },
-        "keywords": {
-          "Faction": [ "Thousand Sons" ],
-          "Keywords": [ "INFANTRY", "MOUNTED", "CHARACTER", "EPIC HERO", "FLY", "PSYKER", "CHAOS", "TZEENTCH", "MUTANT", "TZAANGOR SHAMAN", "KAA'SKREK" ]
-        },
         "stats": {
-          "M": { "value": 10 }, "T": { "value": 4 }, "Sv": { "value": 5 }, "W": { "value": 4 }, "Ld": { "value": 7 }, "OC": { "value": 1 }
+          "A": {
+            "value": 3
+          },
+          "AP": {
+            "value": -1
+          },
+          "D": {
+            "statType": "term",
+            "value": "D3"
+          },
+          "Range": {
+            "statType": "term",
+            "value": "Melee"
+          },
+          "S": {
+            "value": 6
+          },
+          "WS": {
+            "value": 3
+          }
         }
       },
-      "Unit§Rubric Marines": {
+      "Melee Weapon§Tzaangor Enlightened—Divining spear": {
+        "aspects": {
+          "Label": "Divining spear"
+        },
         "assets": {
           "traits": [
-            { "trait": "Ability§Deep Strike" },
-            { "trait": "Ability§Cabal of Sorcerers" },
-            { "trait": "Ability§Invulnerable", "stats": { "x": { "value": "5+" } } },
-            { "trait": "Model§Aspiring Sorcerer", "quantity": 1 },
-            { "trait": "Model§Rubric Marine with Soulreaper Cannon", "quantity": 1 },
-            { "trait": "Model§Rubric Marine with Inferno Boltgun", "quantity": 8 }
+            "Ability§Lance",
+            "Ability§Precision"
           ]
         },
-        "keywords": { "Faction": [ "Thousand Sons" ], "Keywords": [ "INFANTRY", "BATTLELINE", "PSYKER", "CHAOS", "TZEENTCH", "RUBRIC MARINES" ] },
         "stats": {
-          "Models": { "dynamic": false, "value": 10 }
+          "A": {
+            "value": 3
+          },
+          "AP": {
+            "value": -1
+          },
+          "D": {
+            "value": 2
+          },
+          "Range": {
+            "statType": "term",
+            "value": "Melee"
+          },
+          "S": {
+            "value": 5
+          },
+          "WS": {
+            "value": 4
+          }
         }
       },
-      "Unit§Tzaangor Enlightened": {
+      "Melee Weapon§Zadaphon the Soul Eater—Hellforged weapons": {
+        "aspects": {
+          "Label": "Hellforged weapons"
+        },
         "assets": {
           "traits": [
-            { "trait": "Ability§Deep Strike" },
-            { "trait": "Ability§Prophesied Doom" },
-            { "trait": "Ability§Invulnerable", "stats": { "x": { "value": "5+" } } },
-            { "trait": "Model§Tzaangor Enlightened", "quantity": 3 }
+            "Ability§Devastating Wounds",
+            "Ability§Psychic"
           ]
         },
-        "keywords": { "Faction": [ "Thousand Sons" ], "Keywords": [ "MOUNTED", "FLY", "CHAOS", "TZEENTCH", "MUTANT", "TZAANGOR ENLIGHTENED" ] },
         "stats": {
-          "Models": { "dynamic": false, "value": 3 }
+          "A": {
+            "value": 12
+          },
+          "AP": {
+            "value": -1
+          },
+          "D": {
+            "value": 1
+          },
+          "Range": {
+            "statType": "term",
+            "value": "Melee"
+          },
+          "S": {
+            "value": 6
+          },
+          "WS": {
+            "value": 2
+          }
         }
       },
       "Model§Aspiring Sorcerer": {
-        "assets": { "traits": [
-          { "trait": "Ranged Weapon§Inferno bolt pistol" },
-          { "trait": "Melee Weapon§Force stave" },
-          { "trait": "Ranged Weapon§Malefic Curse" }
-        ] },
-        "stats": { "M": { "value": 6 }, "T": { "value": 4 }, "Sv": { "value": 3 }, "W": { "value": 3 }, "Ld": { "value": 6 }, "OC": { "value": 1 } }
+        "assets": {
+          "traits": [
+            "Ability§Cabal of Sorcerers",
+            "Ranged Weapon§Rubric Marines—Inferno bolt pistol",
+            "Ranged Weapon§Rubric Marines—Malefic Curse",
+            "Melee Weapon§Rubric Marines—Force weapon"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Psyker"
+          ]
+        },
+        "stats": {
+          "Ld": {
+            "value": 7
+          },
+          "M": {
+            "value": 6
+          },
+          "OC": {
+            "value": 2
+          },
+          "Sv": {
+            "value": 3
+          },
+          "T": {
+            "value": 4
+          },
+          "W": {
+            "value": 3
+          }
+        }
       },
-      "Model§Rubric Marine with Inferno Boltgun": {
-        "aspects": { "Label": "Rubric Marine" },
-        "assets": { "traits": [
-          { "trait": "Ranged Weapon§Inferno boltgun" },
-          { "trait": "Melee Weapon§Close combat weapon" }
-        ] },
-        "stats": { "M": { "value": 6 }, "T": { "value": 4 }, "Sv": { "value": 3 }, "W": { "value": 2 }, "Ld": { "value": 7 }, "OC": { "value": 1 } }
-      },
-      "Model§Rubric Marine with Soulreaper Cannon": {
-        "aspects": { "Label": "Rubric Marine" },
-        "assets": { "traits": [
-          { "trait": "Ranged Weapon§Soulreaper cannon" },
-          { "trait": "Melee Weapon§Close combat weapon" }
-        ] },
-        "stats": { "M": { "value": 6 }, "T": { "value": 4 }, "Sv": { "value": 3 }, "W": { "value": 2 }, "Ld": { "value": 7 }, "OC": { "value": 1 } }
+      "Model§Rubric Marine": {
+        "stats": {
+          "Ld": {
+            "value": 7
+          },
+          "M": {
+            "value": 6
+          },
+          "OC": {
+            "value": 2
+          },
+          "Sv": {
+            "value": 3
+          },
+          "T": {
+            "value": 4
+          },
+          "W": {
+            "value": 2
+          }
+        }
       },
       "Model§Tzaangor Enlightened": {
-        "assets": { "traits": [
-          { "trait": "Melee Weapon§Divining spear" }
-        ] },
-        "stats": { "M": { "value": 10 }, "T": { "value": 4 }, "Sv": { "value": 5 }, "W": { "value": 2 }, "Ld": { "value": 7 }, "OC": { "value": 2 } }
+        "stats": {
+          "Ld": {
+            "value": 7
+          },
+          "M": {
+            "value": 10
+          },
+          "OC": {
+            "value": 2
+          },
+          "Sv": {
+            "value": 5
+          },
+          "T": {
+            "value": 4
+          },
+          "W": {
+            "value": 5
+          }
+        }
       },
-      "Ranged Weapon§Infernal cannon": {
-        "stats": { "Range": { "value": 24 }, "A": { "value": 3 }, "BS": { "value": 2 }, "S": { "value": 5 }, "AP": { "value": -2 }, "D": { "value": 2 } }
+      "Ranged Weapon§Kaa'skrek—Baleful Devolution": {
+        "aspects": {
+          "Label": "Baleful Devolution"
+        },
+        "assets": {
+          "traits": [
+            "Ability§Blast",
+            "Ability§Devastating Wounds",
+            "Ability§Psychic"
+          ]
+        },
+        "stats": {
+          "A": {
+            "format": "D6",
+            "value": 0
+          },
+          "AP": {
+            "value": 0
+          },
+          "BS": {
+            "value": 3
+          },
+          "D": {
+            "value": 1
+          },
+          "Range": {
+            "value": 18
+          },
+          "S": {
+            "value": 9
+          }
+        }
       },
-      "Melee Weapon§Hellforged weapons": {
-        "assets": { "traits": [
-          { "trait": "Ability§Devastating Wounds" },
-          { "trait": "Ability§Psychic" }
-        ] },
-        "stats": { "Range": { "statType": "term", "value": "Melee" }, "A": { "value": 12 }, "WS": { "value": 2 }, "S": { "value": 6 }, "AP": { "value": -1 }, "D": { "value": 1 } }
+      "Ranged Weapon§Rubric Marines—Inferno bolt pistol": {
+        "aspects": {
+          "Label": "Inferno bolt pistol"
+        },
+        "assets": {
+          "traits": [
+            "Ability§Pistol",
+            "Ability§Psychic"
+          ]
+        },
+        "stats": {
+          "A": {
+            "value": 1
+          },
+          "AP": {
+            "value": -1
+          },
+          "BS": {
+            "value": 3
+          },
+          "D": {
+            "value": 1
+          },
+          "Range": {
+            "value": 12
+          },
+          "S": {
+            "value": 4
+          }
+        }
       },
-      "Ranged Weapon§Baleful Devolution": {
-        "assets": { "traits": [
-          { "trait": "Ability§Psychic" },
-          { "trait": "Ability§Devastating Wounds" },
-          { "trait": "Ability§Blast" }
-        ] },
-        "stats": { "Range": { "value": 18 }, "A": { "statType": "term", "value": "D6" }, "BS": { "value": 3 }, "S": { "value": 9 }, "AP": { "value": 0 }, "D": { "value": 1 } }
+      "Ranged Weapon§Rubric Marines—Inferno boltgun": {
+        "aspects": {
+          "Label": "Inferno boltgun"
+        },
+        "stats": {
+          "A": {
+            "value": 2
+          },
+          "AP": {
+            "value": -1
+          },
+          "BS": {
+            "value": 3
+          },
+          "D": {
+            "value": 1
+          },
+          "Range": {
+            "value": 24
+          },
+          "S": {
+            "value": 4
+          }
+        }
       },
-      "Melee Weapon§Force stave": {
-        "assets": { "traits": [
-          { "trait": "Ability§Psychic" }
-        ] },
-        "stats": { "Range": { "statType": "term", "value": "Melee" }, "A": { "value": 3 }, "WS": { "value": 3 }, "S": { "value": 5 }, "AP": { "value": -1 }, "D": { "statType": "term", "value": "D3" } }
+      "Ranged Weapon§Rubric Marines—Malefic Curse": {
+        "aspects": {
+          "Label": "Malefic Curse"
+        },
+        "assets": {
+          "traits": [
+            "Ability§Anti-",
+            "Ability§Devastating Wounds",
+            "Ability§Psychic"
+          ]
+        },
+        "stats": {
+          "A": {
+            "value": 3
+          },
+          "AP": {
+            "value": -1
+          },
+          "BS": {
+            "value": 3
+          },
+          "D": {
+            "value": 1
+          },
+          "Range": {
+            "value": 24
+          },
+          "S": {
+            "value": 4
+          }
+        }
       },
-      "Ranged Weapon§Inferno bolt pistol": {
-        "assets": { "traits": [
-          { "trait": "Ability§Pistol" }
-        ] },
-        "stats": { "Range": { "value": 12 }, "A": { "value": 1 }, "BS": { "value": 3 }, "S": { "value": 4 }, "AP": { "value": -1 }, "D": { "value": 1 } }
+      "Ranged Weapon§Rubric Marines—Soulreaper cannon": {
+        "aspects": {
+          "Label": "Soulreaper cannon"
+        },
+        "assets": {
+          "traits": [
+            "Ability§Devastating Wounds"
+          ]
+        },
+        "stats": {
+          "A": {
+            "value": 6
+          },
+          "AP": {
+            "value": -1
+          },
+          "BS": {
+            "value": 3
+          },
+          "D": {
+            "value": 1
+          },
+          "Range": {
+            "value": 24
+          },
+          "S": {
+            "value": 5
+          }
+        }
       },
-      "Ranged Weapon§Inferno boltgun": {
-        "stats": { "Range": { "value": 24 }, "A": { "value": 2 }, "BS": { "value": 3 }, "S": { "value": 4 }, "AP": { "value": -2 }, "D": { "value": 1 } }
+      "Ranged Weapon§Rubric Marines—Warpflamer": {
+        "aspects": {
+          "Label": "Warpflamer"
+        },
+        "assets": {
+          "traits": [
+            "Ability§Ignores Cover",
+            "Ability§Torrent"
+          ]
+        },
+        "stats": {
+          "A": {
+            "format": "D6",
+            "value": 0
+          },
+          "AP": {
+            "value": -1
+          },
+          "BS": {
+            "statType": "term",
+            "value": "N/A"
+          },
+          "D": {
+            "value": 1
+          },
+          "Range": {
+            "value": 12
+          },
+          "S": {
+            "value": 4
+          }
+        }
       },
-      "Ranged Weapon§Malefic Curse": {
-        "assets": { "traits": [
-          { "trait": "Ability§Psychic" },
-          { "trait": "Ability§Devastating Wounds" },
-          { "trait": "Ability§Anti-", "stats": { "keyword": { "value": "infantry" }, "x": { "value": "4+" } } }
-        ] },
-        "stats": { "Range": { "value": 24 }, "A": { "value": 3 }, "BS": { "value": 3 }, "S": { "value": 4 }, "AP": { "value": -3 }, "D": { "value": 1 } }
+      "Ranged Weapon§Zadaphon the Soul Eater—Infernal cannon": {
+        "aspects": {
+          "Label": "Infernal cannon"
+        },
+        "stats": {
+          "A": {
+            "value": 3
+          },
+          "AP": {
+            "value": -2
+          },
+          "BS": {
+            "value": 2
+          },
+          "D": {
+            "value": 2
+          },
+          "Range": {
+            "value": 24
+          },
+          "S": {
+            "value": 5
+          }
+        }
       },
-      "Ranged Weapon§Soulreaper cannon": {
-        "assets": { "traits": [
-          { "trait": "Ability§Devastating Wounds" }
-        ] },
-        "stats": { "Range": { "value": 24 }, "A": { "value": 3 }, "BS": { "value": 3 }, "S": { "value": 6 }, "AP": { "value": -2 }, "D": { "value": 1 } }
+      "Roster§Roster": {
+        "stats": {
+          "Combat Patrol": {
+            "ranks": {
+              "The Gilded Cabal": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Character§The Gilded Cabal—Zadaphon the Soul Eater"
+                  },
+                  {
+                    "trait": "Character§The Gilded Cabal—Kaa'skrek"
+                  },
+                  {
+                    "trait": "Unit§The Gilded Cabal—Rubric Marines"
+                  },
+                  {
+                    "trait": "Unit§The Gilded Cabal—Tzaangor Enlightened"
+                  }
+                ]
+              }
+            },
+            "value": "The Gilded Cabal"
+          }
+        }
       },
-      "Ranged Weapon§Warpflamer": {
-        "assets": { "traits": [
-          { "trait": "Ability§Torrent" },
-          { "trait": "Ability§Ignores Cover" }
-        ] },
-        "stats": { "Range": { "value": 12 }, "A": { "statType": "term", "value": "D6" }, "BS": { "statType": "term", "value": "N/A" }, "S": { "value": 4 }, "AP": { "value": -1 }, "D": { "value": 1 } }
+      "Stratagem§Arcane Vortex": {
+        "keywords": {
+          "Category": [
+            "Battle Tactic"
+          ],
+          "Phase": [
+            "Shooting",
+            "Fight"
+          ],
+          "Keywords": [
+            "Thousand Sons",
+            "The Gilded Cabal"
+          ],
+          "Turn": [
+            "Yours",
+            "Opponent’s"
+          ]
+        },
+        "text": "WHEN: Your Shooting phase or the Fight phase.\n\nTARGET: One Thousand Sons Psyker unit from your army that has not been selected to shoot or fight this phase.\n\nEFFECT: Until the end of the phase, each time a model in your unit makes an attack with a Psychic weapon, add 1 to the Hit roll."
       },
-      "Melee Weapon§Close combat weapon": {
-        "stats": { "Range": { "statType": "term", "value": "Melee" }, "A": { "value": 2 }, "WS": { "value": 3 }, "S": { "value": 4 }, "AP": { "value": 0 }, "D": { "value": 1 } }
+      "Stratagem§Destiny Foretold": {
+        "keywords": {
+          "Category": [
+            "Epic Deed"
+          ],
+          "Phase": [
+            "Any"
+          ],
+          "Keywords": [
+            "Thousand Sons",
+            "The Gilded Cabal"
+          ],
+          "Turn": [
+            "Yours",
+            "Opponent’s"
+          ]
+        },
+        "text": "WHEN: Any phase, just after a Thousand Sons unit from your army is destroyed.\n\nTARGET: The destroyed Thousand Sons unit and the enemy unit that destroyed it.\n\nEFFECT: Until the end of the battle, each time a friendly Thousand Sons model makes an attack that targets that enemy unit, add 1 to the Wound roll."
       },
-      "Melee Weapon§Divining spear": {
-        "assets": { "traits": [
-          { "trait": "Ability§Precision" },
-          { "trait": "Ability§Lance" }
-        ] },
-        "stats": { "Range": { "statType": "term", "value": "Melee" }, "A": { "value": 3 }, "WS": { "value": 4 }, "S": { "value": 5 }, "AP": { "value": -1 }, "D": { "value": 2 } }
+      "Stratagem§Temporal Manipulation": {
+        "keywords": {
+          "Category": [
+            "Strategic Ploy"
+          ],
+          "Phase": [
+            "Command"
+          ],
+          "Keywords": [
+            "Thousand Sons",
+            "The Gilded Cabal"
+          ],
+          "Turn": [
+            "Yours"
+          ]
+        },
+        "text": "WHEN: Your Command phase.\n\nTARGET: One Thousand Sons unit from your army.\n\nEFFECT: Until the start of your next Command phase, add 1 to the Objective Control characteristic of models in your unit. This Stratagem can only be used on a unit once per battle."
+      },
+      "Unit§The Gilded Cabal—Rubric Marines": {
+        "aspects": {
+          "Label": "Rubric Marines"
+        },
+        "assets": {
+          "traits": [
+            {
+              "item": "Ability§Invulnerable",
+              "stats": {
+                "x": {
+                  "value": "5+"
+                }
+              }
+            },
+            {
+              "item": "Model§Aspiring Sorcerer",
+              "assets": {
+                "traits": [
+                  "Ranged Weapon§Rubric Marines—Inferno bolt pistol",
+                  "Ranged Weapon§Rubric Marines—Malefic Curse",
+                  "Melee Weapon§Rubric Marines—Force weapon"
+                ]
+              }
+            },
+            {
+              "item": "Model§Rubric Marine",
+              "assets": {
+                "traits": [
+                  "Ranged Weapon§Rubric Marines—Soulreaper cannon",
+                  "Melee Weapon§Rubric Marines—Close combat weapon"
+                ]
+              }
+            },
+            {
+              "item": "Model§Rubric Marine",
+              "quantity": "5",
+              "assets": {
+                "traits": [
+                  "Ranged Weapon§Rubric Marines—Warpflamer",
+                  "Melee Weapon§Rubric Marines—Close combat weapon"
+                ]
+              }
+            },
+            {
+              "item": "Model§Rubric Marine",
+              "quantity": "3",
+              "assets": {
+                "traits": [
+                  "Ranged Weapon§Rubric Marines—Inferno boltgun",
+                  "Melee Weapon§Rubric Marines—Close combat weapon"
+                ]
+              }
+            }
+          ]
+        },
+        "keywords": {
+          "Faction": [
+            "Thousand Sons"
+          ],
+          "Source": [
+            "10th Edition Combat Patrol"
+          ],
+          "Keywords": [
+            "Infantry",
+            "Battleline",
+            "Chaos",
+            "Tzeentch",
+            "Rubricae",
+            "Rubric Marines"
+          ]
+        }
+      },
+      "Unit§The Gilded Cabal—Tzaangor Enlightened": {
+        "aspects": {
+          "Label": "Tzaangor Enlightened"
+        },
+        "assets": {
+          "traits": [
+            "Ability§Prophesied Doom",
+            "Ability§Deep Strike",
+            "Ability§Bestial Prophet",
+            {
+              "item": "Ability§Invulnerable",
+              "stats": {
+                "x": {
+                  "value": "5+"
+                }
+              }
+            },
+            {
+              "item": "Model§Tzaangor Enlightened",
+              "quantity": "3",
+              "assets": {
+                "traits": [
+                  "Melee Weapon§Tzaangor Enlightened—Divining spear"
+                ]
+              }
+            }
+          ]
+        },
+        "keywords": {
+          "Faction": [
+            "Thousand Sons"
+          ],
+          "Source": [
+            "10th Edition Combat Patrol"
+          ],
+          "Keywords": [
+            "Mounted",
+            "Fly",
+            "Chaos",
+            "Tzeentch",
+            "Mutant",
+            "Tzaangor Enlightened"
+          ]
+        },
+        "stats": {
+          "Led by": {
+            "ranks": {
+              "Kaa'skrek": {
+                "number": 1,
+                "order": 1,
+                "term": "Character§The Gilded Cabal—Kaa'skrek"
+              }
+            },
+            "value": "-"
+          }
+        }
       }
     }
   }
