@@ -24,6 +24,144 @@
               "Enhancement"
             ]
           }
+        },
+        "rules": {
+          "renameToWarlord": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "aspects",
+                    "Label"
+                  ]
+                ],
+                "prepend": "WL ",
+                "value": [
+                  "{this}",
+                  "evals",
+                  "0",
+                  "result",
+                  "string"
+                ]
+              }
+            ],
+            "evals": [
+              {
+                "actionable": false,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "aspects",
+                    "Label"
+                  ]
+                ]
+              },
+              {
+                "actionable": true,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Warlord",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ]
+          }
+        }
+      },
+      "Unit": {
+        "removed": {
+          "stats": {
+            "Points": {},
+            "Leader": {}
+          }
+        },
+        "rules": {
+          "applyLeader": {
+            "actions": [
+              {
+                "actionType": "remove",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{roster}",
+                    "traits"
+                  ]
+                ],
+                "value": [
+                  "{self}",
+                  "stats",
+                  "Led by",
+                  "processed",
+                  "term",
+                  "current"
+                ]
+              },
+              {
+                "actionType": "add",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "traits"
+                  ]
+                ],
+                "value": [
+                  "{self}",
+                  "stats",
+                  "Led by",
+                  "processed",
+                  "term",
+                  "current"
+                ]
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": true,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Led by",
+                    "value"
+                  ]
+                ],
+                "value": "-"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass"
+          }
+        },
+        "stats": {
+          "Led by": {
+            "dynamic": true,
+            "group": "Loadout",
+            "groupOrder": 7,
+            "ranks": {
+              "-": {
+                "order": 0
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "tracked": true,
+            "value": null,
+            "visibility": "active"
+          }
         }
       }
     },
@@ -63,15 +201,15 @@
         "text": "While this model is leading a unit, each time a model in that unit makes an attack, add 1 to the Hit roll."
       },
       "Character§Zadaphon the Soul Eater": {
-        "aspects": { "Unique": true, "Label": "WL Zadaphon the Soul Eater" },
+        "aspects": { "Unique": true, "Label": "Zadaphon the Soul Eater" },
         "assets": {
           "traits": [
-            "Ability§Deep Strike",
-            "Ability§Cabal of Sorcerers",
-            "Ability§Spirit Snare",
-            { "item": "Ability§Invulnerable", "stats": { "x": { "value": "4+" } } },
-            "Ranged Weapon§Infernal cannon",
-            "Melee Weapon§Hellforged weapons"
+            { "trait": "Ability§Deep Strike" },
+            { "trait": "Ability§Cabal of Sorcerers" },
+            { "trait": "Ability§Spirit Snare" },
+            { "trait": "Ability§Invulnerable", "stats": { "x": { "value": "4+" } } },
+            { "trait": "Ranged Weapon§Infernal cannon" },
+            { "trait": "Melee Weapon§Hellforged weapons" }
           ]
         },
         "keywords": {
@@ -87,12 +225,12 @@
         "aspects": { "Unique": true, "Label": "Kaa'skrek" },
         "assets": {
           "traits": [
-            "Ability§Deep Strike",
-            "Ability§Bestial Prophecy",
-            { "item": "Ability§Leader", "text": "This model can be attached to the following unit:\n\n* Tzaangor Enlightened" },
-            { "item": "Ability§Invulnerable", "stats": { "x": { "value": "5+" } } },
-            "Ranged Weapon§Baleful Devolution",
-            "Melee Weapon§Force stave"
+            { "trait": "Ability§Deep Strike" },
+            { "trait": "Ability§Bestial Prophecy" },
+            { "trait": "Ability§Leader", "text": "This model can be attached to the following unit:\n\n* Tzaangor Enlightened" },
+            { "trait": "Ability§Invulnerable", "stats": { "x": { "value": "5+" } } },
+            { "trait": "Ranged Weapon§Baleful Devolution" },
+            { "trait": "Melee Weapon§Force stave" }
           ]
         },
         "keywords": {
@@ -104,52 +242,14 @@
         }
       },
       "Unit§Rubric Marines": {
-        "aspects": { "Label": "Rubric Marines" },
         "assets": {
           "traits": [
-            "Ability§Deep Strike",
-            "Ability§Cabal of Sorcerers",
-            { "item": "Ability§Invulnerable", "stats": { "x": { "value": "5+" } } },
-            { 
-              "item": "Model§Aspiring Sorcerer", 
-              "quantity": 1,
-              "assets": {
-                "traits": [
-                  "Ranged Weapon§Inferno bolt pistol",
-                  "Melee Weapon§Force stave",
-                  "Ranged Weapon§Malefic Curse"
-                ]
-              },
-              "stats": {
-                "M": { "value": 6 }, "T": { "value": 4 }, "Sv": { "value": 3 }, "W": { "value": 3 }, "Ld": { "value": 6 }, "OC": { "value": 1 }
-              }
-            },
-            { 
-              "item": "Model§Rubric Marine", 
-              "quantity": 8,
-              "assets": {
-                "traits": [
-                  "Ranged Weapon§Inferno boltgun",
-                  "Melee Weapon§Close combat weapon"
-                ]
-              },
-              "stats": {
-                "M": { "value": 6 }, "T": { "value": 4 }, "Sv": { "value": 3 }, "W": { "value": 2 }, "Ld": { "value": 7 }, "OC": { "value": 1 }
-              }
-            },
-            {
-              "item": "Model§Rubric Marine",
-              "quantity": 1,
-              "assets": {
-                "traits": [
-                  "Ranged Weapon§Soulreaper cannon",
-                  "Melee Weapon§Close combat weapon"
-                ]
-              },
-              "stats": {
-                "M": { "value": 6 }, "T": { "value": 4 }, "Sv": { "value": 3 }, "W": { "value": 2 }, "Ld": { "value": 7 }, "OC": { "value": 1 }
-              }
-            }
+            { "trait": "Ability§Deep Strike" },
+            { "trait": "Ability§Cabal of Sorcerers" },
+            { "trait": "Ability§Invulnerable", "stats": { "x": { "value": "5+" } } },
+            { "trait": "Model§Aspiring Sorcerer", "quantity": 1 },
+            { "trait": "Model§Rubric Marine with Soulreaper Cannon", "quantity": 1 },
+            { "trait": "Model§Rubric Marine with Inferno Boltgun", "quantity": 8 }
           ]
         },
         "keywords": { "Faction": [ "Thousand Sons" ], "Keywords": [ "INFANTRY", "BATTLELINE", "PSYKER", "CHAOS", "TZEENTCH", "RUBRIC MARINES" ] },
@@ -160,21 +260,10 @@
       "Unit§Tzaangor Enlightened": {
         "assets": {
           "traits": [
-            "Ability§Deep Strike",
-            "Ability§Prophesied Doom",
-            { "item": "Ability§Invulnerable", "stats": { "x": { "value": "5+" } } },
-            { 
-              "item": "Model§Tzaangor Enlightened", 
-              "quantity": 3,
-              "assets": {
-                "traits": [
-                  "Melee Weapon§Divining spear"
-                ]
-              },
-              "stats": {
-                "M": { "value": 10 }, "T": { "value": 4 }, "Sv": { "value": 5 }, "W": { "value": 2 }, "Ld": { "value": 7 }, "OC": { "value": 2 }
-              }
-            }
+            { "trait": "Ability§Deep Strike" },
+            { "trait": "Ability§Prophesied Doom" },
+            { "trait": "Ability§Invulnerable", "stats": { "x": { "value": "5+" } } },
+            { "trait": "Model§Tzaangor Enlightened", "quantity": 3 }
           ]
         },
         "keywords": { "Faction": [ "Thousand Sons" ], "Keywords": [ "MOUNTED", "FLY", "CHAOS", "TZEENTCH", "MUTANT", "TZAANGOR ENLIGHTENED" ] },
@@ -182,45 +271,98 @@
           "Models": { "dynamic": false, "value": 3 }
         }
       },
+      "Model§Aspiring Sorcerer": {
+        "assets": { "traits": [
+          { "trait": "Ranged Weapon§Inferno bolt pistol" },
+          { "trait": "Melee Weapon§Force stave" },
+          { "trait": "Ranged Weapon§Malefic Curse" }
+        ] },
+        "stats": { "M": { "value": 6 }, "T": { "value": 4 }, "Sv": { "value": 3 }, "W": { "value": 3 }, "Ld": { "value": 6 }, "OC": { "value": 1 } }
+      },
+      "Model§Rubric Marine with Inferno Boltgun": {
+        "aspects": { "Label": "Rubric Marine" },
+        "assets": { "traits": [
+          { "trait": "Ranged Weapon§Inferno boltgun" },
+          { "trait": "Melee Weapon§Close combat weapon" }
+        ] },
+        "stats": { "M": { "value": 6 }, "T": { "value": 4 }, "Sv": { "value": 3 }, "W": { "value": 2 }, "Ld": { "value": 7 }, "OC": { "value": 1 } }
+      },
+      "Model§Rubric Marine with Soulreaper Cannon": {
+        "aspects": { "Label": "Rubric Marine" },
+        "assets": { "traits": [
+          { "trait": "Ranged Weapon§Soulreaper cannon" },
+          { "trait": "Melee Weapon§Close combat weapon" }
+        ] },
+        "stats": { "M": { "value": 6 }, "T": { "value": 4 }, "Sv": { "value": 3 }, "W": { "value": 2 }, "Ld": { "value": 7 }, "OC": { "value": 1 } }
+      },
+      "Model§Tzaangor Enlightened": {
+        "assets": { "traits": [
+          { "trait": "Melee Weapon§Divining spear" }
+        ] },
+        "stats": { "M": { "value": 10 }, "T": { "value": 4 }, "Sv": { "value": 5 }, "W": { "value": 2 }, "Ld": { "value": 7 }, "OC": { "value": 2 } }
+      },
       "Ranged Weapon§Infernal cannon": {
         "stats": { "Range": { "value": 24 }, "A": { "value": 3 }, "BS": { "value": 2 }, "S": { "value": 5 }, "AP": { "value": -2 }, "D": { "value": 2 } }
       },
       "Melee Weapon§Hellforged weapons": {
-        "assets": { "traits": [ "Ability§Devastating Wounds", "Ability§Psychic" ] },
+        "assets": { "traits": [
+          { "trait": "Ability§Devastating Wounds" },
+          { "trait": "Ability§Psychic" }
+        ] },
         "stats": { "Range": { "statType": "term", "value": "Melee" }, "A": { "value": 12 }, "WS": { "value": 2 }, "S": { "value": 6 }, "AP": { "value": -1 }, "D": { "value": 1 } }
       },
       "Ranged Weapon§Baleful Devolution": {
-        "assets": { "traits": [ "Ability§Psychic", "Ability§Devastating Wounds", "Ability§Blast" ] },
+        "assets": { "traits": [
+          { "trait": "Ability§Psychic" },
+          { "trait": "Ability§Devastating Wounds" },
+          { "trait": "Ability§Blast" }
+        ] },
         "stats": { "Range": { "value": 18 }, "A": { "statType": "term", "value": "D6" }, "BS": { "value": 3 }, "S": { "value": 9 }, "AP": { "value": 0 }, "D": { "value": 1 } }
       },
       "Melee Weapon§Force stave": {
-        "assets": { "traits": [ "Ability§Psychic" ] },
+        "assets": { "traits": [
+          { "trait": "Ability§Psychic" }
+        ] },
         "stats": { "Range": { "statType": "term", "value": "Melee" }, "A": { "value": 3 }, "WS": { "value": 3 }, "S": { "value": 5 }, "AP": { "value": -1 }, "D": { "statType": "term", "value": "D3" } }
       },
       "Ranged Weapon§Inferno bolt pistol": {
-        "assets": { "traits": [ "Ability§Pistol" ] },
+        "assets": { "traits": [
+          { "trait": "Ability§Pistol" }
+        ] },
         "stats": { "Range": { "value": 12 }, "A": { "value": 1 }, "BS": { "value": 3 }, "S": { "value": 4 }, "AP": { "value": -1 }, "D": { "value": 1 } }
       },
       "Ranged Weapon§Inferno boltgun": {
         "stats": { "Range": { "value": 24 }, "A": { "value": 2 }, "BS": { "value": 3 }, "S": { "value": 4 }, "AP": { "value": -2 }, "D": { "value": 1 } }
       },
       "Ranged Weapon§Malefic Curse": {
-        "assets": { "traits": [ "Ability§Psychic", "Ability§Devastating Wounds", { "item": "Ability§Anti-", "stats": { "keyword": { "value": "infantry" }, "x": { "value": "4+" } } } ] },
+        "assets": { "traits": [
+          { "trait": "Ability§Psychic" },
+          { "trait": "Ability§Devastating Wounds" },
+          { "trait": "Ability§Anti-", "stats": { "keyword": { "value": "infantry" }, "x": { "value": "4+" } } }
+        ] },
         "stats": { "Range": { "value": 24 }, "A": { "value": 3 }, "BS": { "value": 3 }, "S": { "value": 4 }, "AP": { "value": -3 }, "D": { "value": 1 } }
       },
       "Ranged Weapon§Soulreaper cannon": {
-        "assets": { "traits": [ "Ability§Devastating Wounds" ] },
+        "assets": { "traits": [
+          { "trait": "Ability§Devastating Wounds" }
+        ] },
         "stats": { "Range": { "value": 24 }, "A": { "value": 3 }, "BS": { "value": 3 }, "S": { "value": 6 }, "AP": { "value": -2 }, "D": { "value": 1 } }
       },
       "Ranged Weapon§Warpflamer": {
-        "assets": { "traits": [ "Ability§Torrent", "Ability§Ignores Cover" ] },
+        "assets": { "traits": [
+          { "trait": "Ability§Torrent" },
+          { "trait": "Ability§Ignores Cover" }
+        ] },
         "stats": { "Range": { "value": 12 }, "A": { "statType": "term", "value": "D6" }, "BS": { "statType": "term", "value": "N/A" }, "S": { "value": 4 }, "AP": { "value": -1 }, "D": { "value": 1 } }
       },
       "Melee Weapon§Close combat weapon": {
         "stats": { "Range": { "statType": "term", "value": "Melee" }, "A": { "value": 2 }, "WS": { "value": 3 }, "S": { "value": 4 }, "AP": { "value": 0 }, "D": { "value": 1 } }
       },
       "Melee Weapon§Divining spear": {
-        "assets": { "traits": [ "Ability§Precision", "Ability§Lance" ] },
+        "assets": { "traits": [
+          { "trait": "Ability§Precision" },
+          { "trait": "Ability§Lance" }
+        ] },
         "stats": { "Range": { "statType": "term", "value": "Melee" }, "A": { "value": 3 }, "WS": { "value": 4 }, "S": { "value": 5 }, "AP": { "value": -1 }, "D": { "value": 2 } }
       }
     }
