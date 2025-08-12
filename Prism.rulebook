@@ -104,14 +104,52 @@
         }
       },
       "Unit§Rubric Marines": {
+        "aspects": { "Label": "Rubric Marines" },
         "assets": {
           "traits": [
             "Ability§Deep Strike",
             "Ability§Cabal of Sorcerers",
             { "item": "Ability§Invulnerable", "stats": { "x": { "value": "5+" } } },
-            { "item": "Model§Aspiring Sorcerer", "quantity": 1 },
-            { "item": "Model§Rubric Marine with Soulreaper Cannon", "quantity": 1 },
-            { "item": "Model§Rubric Marine with Inferno Boltgun", "quantity": 8 }
+            { 
+              "item": "Model§Aspiring Sorcerer", 
+              "quantity": 1,
+              "assets": {
+                "traits": [
+                  "Ranged Weapon§Inferno bolt pistol",
+                  "Melee Weapon§Force stave",
+                  "Ranged Weapon§Malefic Curse"
+                ]
+              },
+              "stats": {
+                "M": { "value": 6 }, "T": { "value": 4 }, "Sv": { "value": 3 }, "W": { "value": 3 }, "Ld": { "value": 6 }, "OC": { "value": 1 }
+              }
+            },
+            { 
+              "item": "Model§Rubric Marine", 
+              "quantity": 8,
+              "assets": {
+                "traits": [
+                  "Ranged Weapon§Inferno boltgun",
+                  "Melee Weapon§Close combat weapon"
+                ]
+              },
+              "stats": {
+                "M": { "value": 6 }, "T": { "value": 4 }, "Sv": { "value": 3 }, "W": { "value": 2 }, "Ld": { "value": 7 }, "OC": { "value": 1 }
+              }
+            },
+            {
+              "item": "Model§Rubric Marine",
+              "quantity": 1,
+              "assets": {
+                "traits": [
+                  "Ranged Weapon§Soulreaper cannon",
+                  "Melee Weapon§Close combat weapon"
+                ]
+              },
+              "stats": {
+                "M": { "value": 6 }, "T": { "value": 4 }, "Sv": { "value": 3 }, "W": { "value": 2 }, "Ld": { "value": 7 }, "OC": { "value": 1 }
+              }
+            }
           ]
         },
         "keywords": { "Faction": [ "Thousand Sons" ], "Keywords": [ "INFANTRY", "BATTLELINE", "PSYKER", "CHAOS", "TZEENTCH", "RUBRIC MARINES" ] },
@@ -125,31 +163,24 @@
             "Ability§Deep Strike",
             "Ability§Prophesied Doom",
             { "item": "Ability§Invulnerable", "stats": { "x": { "value": "5+" } } },
-            { "item": "Model§Tzaangor Enlightened", "quantity": 3 }
+            { 
+              "item": "Model§Tzaangor Enlightened", 
+              "quantity": 3,
+              "assets": {
+                "traits": [
+                  "Melee Weapon§Divining spear"
+                ]
+              },
+              "stats": {
+                "M": { "value": 10 }, "T": { "value": 4 }, "Sv": { "value": 5 }, "W": { "value": 2 }, "Ld": { "value": 7 }, "OC": { "value": 2 }
+              }
+            }
           ]
         },
         "keywords": { "Faction": [ "Thousand Sons" ], "Keywords": [ "MOUNTED", "FLY", "CHAOS", "TZEENTCH", "MUTANT", "TZAANGOR ENLIGHTENED" ] },
         "stats": {
           "Models": { "dynamic": false, "value": 3 }
         }
-      },
-      "Model§Aspiring Sorcerer": {
-        "assets": { "traits": [ "Ranged Weapon§Inferno bolt pistol", "Melee Weapon§Force stave", "Ranged Weapon§Malefic Curse" ] },
-        "stats": { "M": { "value": 6 }, "T": { "value": 4 }, "Sv": { "value": 3 }, "W": { "value": 3 }, "Ld": { "value": 6 }, "OC": { "value": 1 } }
-      },
-      "Model§Rubric Marine with Inferno Boltgun": {
-        "aspects": { "Label": "Rubric Marine" },
-        "assets": { "traits": [ { "trait": "Ranged Weapon§Inferno boltgun" }, { "trait": "Melee Weapon§Close combat weapon" } ] },
-        "stats": { "M": { "value": 6 }, "T": { "value": 4 }, "Sv": { "value": 3 }, "W": { "value": 2 }, "Ld": { "value": 7 }, "OC": { "value": 1 } }
-      },
-      "Model§Rubric Marine with Soulreaper Cannon": {
-        "aspects": { "Label": "Rubric Marine" },
-        "assets": { "traits": [ { "trait": "Ranged Weapon§Soulreaper cannon" }, { "trait": "Melee Weapon§Close combat weapon" } ] },
-        "stats": { "M": { "value": 6 }, "T": { "value": 4 }, "Sv": { "value": 3 }, "W": { "value": 2 }, "Ld": { "value": 7 }, "OC": { "value": 1 } }
-      },
-      "Model§Tzaangor Enlightened": {
-        "assets": { "traits": [ "Melee Weapon§Divining spear" ] },
-        "stats": { "M": { "value": 10 }, "T": { "value": 4 }, "Sv": { "value": 5 }, "W": { "value": 2 }, "Ld": { "value": 7 }, "OC": { "value": 2 } }
       },
       "Ranged Weapon§Infernal cannon": {
         "stats": { "Range": { "value": 24 }, "A": { "value": 3 }, "BS": { "value": 2 }, "S": { "value": 5 }, "AP": { "value": -2 }, "D": { "value": 2 } }
