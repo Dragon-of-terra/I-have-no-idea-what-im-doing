@@ -1,6 +1,6 @@
 {
   "name": "Prism of Zadopon",
-  "revision": "7.0.8",
+  "revision": "7.0.9",
   "game": "Warhammer 40k",
   "genre": "sci-fi",
   "publisher": "Games Workshop",
@@ -24,116 +24,33 @@
               "Enhancement"
             ]
           }
-        },
-        "rules": {
-          "renameToWarlord": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "aspects",
-                    "Label"
-                  ]
-                ],
-                "prepend": "WL ",
-                "value": [
-                  "{this}",
-                  "evals",
-                  "0",
-                  "result",
-                  "string"
-                ]
-              }
-            ],
-            "evals": [
-              {
-                "actionable": false,
-                "paths": [
-                  [
-                    "{self}",
-                    "aspects",
-                    "Label"
-                  ]
-                ]
-              },
-              {
-                "actionable": true,
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Warlord",
-                    "value"
-                  ]
-                ],
-                "value": "✓"
-              }
-            ]
-          }
-        },
-        "stats": {
-          "Warlord": {
-            "dynamic": false,
-            "ranks": {
-              "✓": {
-                "order": 1
-              }
-            },
-            "value": "✓"
-          }
         }
       }
     },
     "assetCatalog": {
       "Roster§Roster": {
+        "assets": {
+          "traits": [
+            "Detachment§Prism of Zadopon",
+            "Character§Zadaphon the Soul Eater",
+            "Character§Kaa'skrek",
+            "Unit§Rubric Marines",
+            "Unit§Tzaangor Enlightened"
+          ]
+        },
         "stats": {
           "Detachment": {
-            "ranks": {
-              "Prism of Zadopon": {
-                "order": 1,
-                "traits": [ { "trait": "Detachment§Prism of Zadopon" } ]
-              }
-            },
+            "dynamic": false,
             "value": "Prism of Zadopon"
           },
           "Faction": {
             "dynamic": false,
-            "ranks": { "Thousand Sons": { "order": 1 } },
             "value": "Thousand Sons"
           }
         }
       },
       "Detachment§Prism of Zadopon": {
-        "text": "This is a fixed force designed to be played against other Combat Patrols.",
-        "rules": {
-          "addPatrolUnits": {
-            "actions": [
-              {
-                "actionType": "add",
-                "paths": [ [ "{roster}", "traits" ] ],
-                "value": "Character§Zadaphon the Soul Eater"
-              },
-              {
-                "actionType": "add",
-                "paths": [ [ "{roster}", "traits" ] ],
-                "value": "Character§Kaa'skrek"
-              },
-              {
-                "actionType": "add",
-                "paths": [ [ "{roster}", "traits" ] ],
-                "value": "Unit§Rubric Marines"
-              },
-              {
-                "actionType": "add",
-                "paths": [ [ "{roster}", "traits" ] ],
-                "value": "Unit§Tzaangor Enlightened"
-              }
-            ]
-          }
-        }
+        "text": "This is a fixed force designed to be played against other Combat Patrols."
       },
       "Ability§Cabal of Sorcerers": {},
       "Ability§Spirit Snare": {
@@ -146,7 +63,7 @@
         "text": "While this model is leading a unit, each time a model in that unit makes an attack, add 1 to the Hit roll."
       },
       "Character§Zadaphon the Soul Eater": {
-        "aspects": { "Unique": true, "Label": "Zadaphon the Soul Eater" },
+        "aspects": { "Unique": true, "Label": "WL Zadaphon the Soul Eater" },
         "assets": {
           "traits": [
             "Ability§Deep Strike",
@@ -162,7 +79,8 @@
           "Keywords": [ "MONSTER", "CHARACTER", "EPIC HERO", "DAEMON", "PSYKER", "CHAOS", "TZEENTCH", "DAEMON PRINCE", "ZADOPHON THE SOUL EATER" ]
         },
         "stats": {
-          "M": { "value": 9 }, "T": { "value": 10 }, "Sv": { "value": 2 }, "W": { "value": 10 }, "Ld": { "value": 6 }, "OC": { "value": 3 }
+          "M": { "value": 9 }, "T": { "value": 10 }, "Sv": { "value": 2 }, "W": { "value": 10 }, "Ld": { "value": 6 }, "OC": { "value": 3 },
+          "Warlord": { "dynamic": false, "value": "✓" }
         }
       },
       "Character§Kaa'skrek": {
