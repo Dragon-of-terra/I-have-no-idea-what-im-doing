@@ -50,7 +50,7 @@
         },
         "text": "When a friendly THOUSAND SONS PSYKER model with the Cabal of Sorcerers ability is destroyed within 9\" of this model, you can select one of the models with this ability. Until the end of the battle, each time the selected model attempts a Ritual, you add 1 to the Psychic test result (to a maximum of +2)."
       },
-      "Character§The Gilded Cabal—Kaa'skrek": {
+      "Character§Kaa'skrek": {
         "aspects": {
           "Label": "Kaa'skrek"
         },
@@ -112,7 +112,7 @@
           }
         }
       },
-      "Character§The Gilded Cabal—Zadaphon the Soul Eater": {
+      "Character§Zadaphon the Soul Eater": {
         "aspects": {
           "Label": "Zadaphon the Soul Eater"
         },
@@ -675,16 +675,16 @@
                 "order": 1,
                 "traits": [
                   {
-                    "trait": "Character§The Gilded Cabal—Zadaphon the Soul Eater"
+                    "trait": "Character§Zadaphon the Soul Eater"
                   },
                   {
-                    "trait": "Character§The Gilded Cabal—Kaa'skrek"
+                    "trait": "Character§Kaa'skrek"
                   },
                   {
-                    "trait": "Unit§The Gilded Cabal—Rubric Marines"
+                    "trait": "Unit§Rubric Marines"
                   },
                   {
-                    "trait": "Unit§The Gilded Cabal—Tzaangor Enlightened"
+                    "trait": "Unit§Tzaangor Enlightened"
                   }
                 ]
               }
@@ -750,7 +750,7 @@
         },
         "text": "WHEN: Your Command phase.\n\nTARGET: One Thousand Sons unit from your army.\n\nEFFECT: Until the start of your next Command phase, add 1 to the Objective Control characteristic of models in your unit. This Stratagem can only be used on a unit once per battle."
       },
-      "Unit§The Gilded Cabal—Rubric Marines": {
+      "Unit§Rubric Marines": {
         "aspects": {
           "Label": "Rubric Marines"
         },
@@ -822,7 +822,7 @@
           ]
         }
       },
-      "Unit§The Gilded Cabal—Tzaangor Enlightened": {
+      "Unit§Tzaangor Enlightened": {
         "aspects": {
           "Label": "Tzaangor Enlightened"
         },
@@ -872,7 +872,7 @@
               "Kaa'skrek": {
                 "number": 1,
                 "order": 1,
-                "term": "Character§The Gilded Cabal—Kaa'skrek"
+                "term": "Character§Kaa'skrek"
               }
             },
             "value": "-"
